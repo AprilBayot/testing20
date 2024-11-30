@@ -2,7 +2,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js";
 
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.2/firebase-auth.js";
 
     const firebaseConfig = {
     apiKey: "AIzaSyD3F5klpN0CJw6AsXnTiH6pDdM42R63MkM",
@@ -22,10 +22,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword} fr
 const name = document.getElementById('name').value
 const conpw = document.getElementById('confirmpassword').value
 const sub = document.getElementById('submit')
-const regsub = document.getElementById('regsubmit')
 
-
-//Login part
 sub.addEventListener('click', () => {
   const email = document.getElementById('email').value
   const pw = document.getElementById('password').value
@@ -35,7 +32,6 @@ sub.addEventListener('click', () => {
     
     const user = userCredential.user;
     alert('success')
-    
     // ...
   })
   .catch((error) => {
@@ -44,24 +40,4 @@ sub.addEventListener('click', () => {
     alert(errorMessage)
   });
  
-})
-
-regsub.addEventListener('click', () => {
-  const regemail = document.getElementById('regemail')
-  const regpw = document.getElementById('regpassword')
-  createUserWithEmailAndPassword(auth, regemail, regpw)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    alert('Created')
-   
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-    
-    // ..
-  });
 })
