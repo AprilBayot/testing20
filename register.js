@@ -37,6 +37,8 @@ sub.addEventListener('click', () => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    alert('cannot sign in')
+    alert(errorMessage)
   });
  
 })
