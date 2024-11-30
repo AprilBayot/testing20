@@ -41,6 +41,7 @@ sub.addEventListener('click', () => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
+    alert(errorMessage)
   });
  
 })
@@ -53,7 +54,7 @@ regsub.addEventListener('click', () => {
     // Signed up 
     const user = userCredential.user;
     alert('Created')
-    window.location.reload()
+   
     // ...
   })
   .catch((error) => {
